@@ -34,6 +34,10 @@ class RepeatingItemNumberEx(Exception):
 
 item_list = []
 item_number_list = []
+item_name_list = []
+item_price_list = []
+item_quantity_list = []
+item_unit_list = []
 
 while True:
     try:
@@ -47,6 +51,14 @@ while True:
             raise NegativeNumbersEx
         if item_number in item_number_list:
             raise RepeatingItemNumberEx
+        if item_name not in item_name_list:
+            item_name_list.append(item_name)
+        if item_price not in item_price_list:
+            item_price_list.append(item_price)
+        if item_quantity not in item_quantity_list:
+            item_quantity_list.append(item_quantity)
+        if item_unit not in item_unit_list:
+            item_unit_list.append(item_unit)
 
         item_number_list.append(item_number)
 
@@ -60,4 +72,6 @@ while True:
         item_dict = {"Название": item_name, "цена": item_price, "количество": item_quantity, "ед": item_unit}
         item_tuple = (item_number, item_dict)
         item_list.append(item_tuple)
-        print(item_list)
+        print(f"Список кортежей: {item_list}")
+        analytics_dict = {"Названия": item_name_list, "Цены": item_price_list, "Количества" : item_quantity_list, "Ед" : item_unit_list}
+        print(f"Аналитика: {analytics_dict}")
