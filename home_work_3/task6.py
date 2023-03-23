@@ -30,7 +30,7 @@ try:
         current_dict = russian_dict
     else:
         current_dict = english_dict
-    for i in range(len(user_word) - 1):
+    for i in range(len(user_word)):
         if user_word[i] not in current_dict:
             raise NewEx()
 except ValueError:
