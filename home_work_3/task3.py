@@ -48,9 +48,9 @@ while True:
         item_unit = input("Введите единицы измерения: ")
 
         if item_number < 0 or item_price < 0 or item_quantity < 0:
-            raise NegativeNumbersEx
+            raise NegativeNumbersEx()
         if item_number in item_number_list:
-            raise RepeatingItemNumberEx
+            raise RepeatingItemNumberEx()
         if item_name not in item_name_list:
             item_name_list.append(item_name)
         if item_price not in item_price_list:

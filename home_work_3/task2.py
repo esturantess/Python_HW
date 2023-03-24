@@ -21,7 +21,7 @@ class NewEx(Exception):
 try:
     new_element = int(input("Введите новый элемент рейтинга: "))
     if new_element < 1:
-        raise NewEx
+        raise NewEx()
 except ValueError:
     print("Некорректное значение.")
 except NewEx:
