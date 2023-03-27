@@ -11,13 +11,6 @@ def populating_the_list(current_list, required_length, input_description):
     return new_multitude
 
 
-# def list_sorting(user_list):
-#     for i in range(len(user_list) - 1):
-#         if user_list[i] > user_list[i + 1]:
-#             user_list.insert(i + i, user_list[i])
-#     return user_list
-
-
 try:
     multitude_length_1 = int(input("Введите количество элементов первого множества: "))
     multitude_length_2 = int(input("Введите количество элементов второго множества: "))
