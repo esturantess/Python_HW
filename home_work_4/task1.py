@@ -11,6 +11,13 @@ def populating_the_list(current_list, required_length, input_description):
     return new_multitude
 
 
+# def list_sorting(user_list):
+#     for i in range(len(user_list) - 1):
+#         if user_list[i] > user_list[i + 1]:
+#             user_list.insert(i + i, user_list[i])
+#     return user_list
+
+
 try:
     multitude_length_1 = int(input("Введите количество элементов первого множества: "))
     multitude_length_2 = int(input("Введите количество элементов второго множества: "))
@@ -28,11 +35,12 @@ else:
     print(list_1)
     print(list_2)
     if len(list_1) >= len(list_2):
-        for i in range(len(list_1)):
+        for i in range(len(list_1) - 1):
             if list_2[i] in list_1:
                 list_3.append(list_2[i])
     else:
-        for i in range(len(list_2)):
+        for i in range(len(list_2) - 1):
             if list_1[i] in list_2:
                 list_3.append(list_1[i])
-    print(list_3)
+    list_3.sort()
+    print("Элементы, встречающиеся в обоих наборах: ", list_3)
