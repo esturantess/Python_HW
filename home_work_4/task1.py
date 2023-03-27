@@ -25,15 +25,14 @@ else:
     list_1 = list(populating_the_list(user_nums_1, multitude_length_1, input_description_1))
     list_2 = list(populating_the_list(user_nums_2, multitude_length_2, input_description_2))
     list_3 = []
-    print(list_1)
-    print(list_2)
+
     if len(list_1) >= len(list_2):
-        for i in range(len(list_1) - 1):
-            if list_2[i] in list_1:
-                list_3.append(list_2[i])
+        for el in list_1:
+            if el in list_2:
+                list_3.append(el)
     else:
-        for i in range(len(list_2) - 1):
-            if list_1[i] in list_2:
-                list_3.append(list_1[i])
+        for el in list_2:
+            if el in list_1:
+                list_3.append(el)
     list_3.sort()
     print("Элементы, встречающиеся в обоих наборах: ", list_3)
