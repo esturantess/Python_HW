@@ -28,13 +28,28 @@ class NewEx(Exception):
 
 def rec_operation(user_symb):
     try:
+        result = None
         if user_symb == "start":
             rec_operation(input("Введите операцию (+, -, *, / или 0 для выхода): "))
             return None
-        if user_symb == "0":
+        elif user_symb == "0":
             return None
+        elif user_symb != "+" and user_symb != "-" and user_symb != "*" and user_symb != "/":
+            raise NewEx()
         first_number = float(input("Введите первое число: "))
-        second_number = float(input("Введите первое число: "))
+        second_number = float(input("Введите второе число: "))
+
+    except ValueError:
+        print("Введена строка вместо числа, попробуйте ещё раз.")
+        rec_operation("start")
+    except NewEx:
+        print("Неверная операция, попробуйте ещё раз.")
+        rec_operation("start")
+    except ZeroDivisionError:
+        print("Ошибка: попытка деления на 0. Попробуйте ещё раз.")
+        rec_operation("start")
+
+    else:
         if user_symb == "+":
             result = first_number + second_number
         elif user_symb == "-":
@@ -43,20 +58,8 @@ def rec_operation(user_symb):
             result = first_number * second_number
         elif user_symb == "/":
             result = first_number / second_number
-        else:
-            raise NewEx()
         print(first_number, user_symb, second_number, "=", result)
         rec_operation(input("Введите операцию (+, -, *, / или 0 для выхода): "))
-
-    except ValueError:
-        print("Некорректное значение.")
-        rec_operation("start")
-    except NewEx:
-        print("Неверная операция, попробуйте ещё раз.")
-        rec_operation("start")
-    except ZeroDivisionError:
-        print("Ошибка: попытка деления на 0")
-        rec_operation("start")
 
 
 rec_operation("start")
