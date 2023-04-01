@@ -8,18 +8,32 @@
 import random
 
 
+class OutOfRangeNumber(Exception):
+    pass
+
+
 def guess_the_number(riddled_number, attempt_number):
     if attempt_number == 11:
         print(f"Количество попыток истекло. Загаданное число: ", riddled_number)
     else:
-        user_number = int(input("Введите загаданное число: "))
-        if user_number == riddled_number:
-            print("Вы отгадали число!")
-            return None
-        elif user_number < riddled_number:
-            print(f"Загаданное число больше, чем ", user_number)
+        try:
+            user_number = int(input("Введите загаданное число: "))
+            if user_number > 100 or user_number < 0:
+                raise OutOfRangeNumber()
+        except ValueError:
+            print("Вы ввели строку вместо числа. Попробуйте ещё раз.")
+            attempt_number -= 1
+        except OutOfRangeNumber:
+            print("Введено число вне заданного диапазона (0, 100). Попробуйте ещё раз.")
+            attempt_number -= 1
         else:
-            print(f"Загаданное число меньше, чем ", user_number)
+            if user_number == riddled_number:
+                print("Вы отгадали число!")
+                return None
+            elif user_number < riddled_number:
+                print(f"Загаданное число больше, чем ", user_number)
+            else:
+                print(f"Загаданное число меньше, чем ", user_number)
         attempt_number += 1
         guess_the_number(riddled_number, attempt_number)
 
