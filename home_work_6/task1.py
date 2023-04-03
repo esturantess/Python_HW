@@ -22,7 +22,6 @@ def fill_array_with_arithmetic_progression(array_size, first_el, progression_dif
     return new_array
 
 
-
 try:
     first_element = user_input("Введите первый элемент: ", float)
     progression_difference = user_input("Введите разность прогрессии: ", float)
