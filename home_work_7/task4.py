@@ -28,7 +28,7 @@ class Matrix:
 
     def __str__(self):
         matrix_rows_number = len(self.matrix_list)
-        return f'{[print((self.matrix_list[i])) for i in range(matrix_rows_number)]}'
+        return f'{[print(*self.matrix_list[i]) for i in range(matrix_rows_number)]}'
 
     def __add__(self, other):
         new_matrix = []
