@@ -11,60 +11,35 @@
 # **Ввод:** пара-ра-рам рам-пам-папам па-ра-па-да
 #     **Вывод:** Парам пам-пам
 
+class Rhythm:
 
-# def counting_the_vowels_number(user_list):
-#     vowel_letters = ("а", "е", "ё", "и", "о", "у", "ы", "э", "ю", "я")
-#     counter = 0
-#     for i in range(len(user_list)):
-#         for j in range(len(user_list[i])):
-#             if (user_list[i])[j] in vowel_letters:
-#                 counter += 1
-#         user_list[i] = counter
-#         counter = 0
-#     return user_list
-#
-#
-# def rhythm_test(user_list):
-#     if len(user_list) == 1:
-#         print("Парам пам-пам")
-#
-#     for k in range(len(user_list) - 1):
-#         if user_list[k] != user_list[k + 1]:
-#             print("Пам парам")
-#             break
-#         elif k + 1 == len(user_list) - 1:
-#             print("Парам пам-пам")
-#             break
-#
-#
-# user_poem = (input("Винни-Пух, введите своё стихотворение: ")).split(" ")
-#
-# rhythm_test(counting_the_vowels_number(user_poem))
+    def __init__(self, user_list):
+        self.user_list = user_list
 
-def counting_the_vowels_number(user_list):
-    vowel_letters = ("а", "е", "ё", "и", "о", "у", "ы", "э", "ю", "я")
-    return list(filter(lambda el: el in vowel_letters, user_list))
+    def counting_the_vowels_number(self, user_list):
+        vowel_letters = ("а", "е", "ё", "и", "о", "у", "ы", "э", "ю", "я")
+        return list(filter(lambda el: el in vowel_letters, user_list))
 
+    def rhythm_test(self):
+        new_list = []
+        for i in range(len(self.user_list)):
+            new_list.append(len(self.counting_the_vowels_number(self.user_list[i])))
 
-def rhythm_test(user_list):
-    new_list = []
-    for i in range(len(user_list)):
-        new_list.append(len(counting_the_vowels_number(user_list[i])))
+        if len(new_list) == 1:
+            print("Парам пам-пам")
 
-    if len(new_list) == 1:
-        print("Парам пам-пам")
-
-    for j in range(len(new_list) - 1):
-        if new_list[j] == new_list[j + 1]:
-            if j + 1 == len(new_list) - 1:
-                print("Парам пам-пам")
-                break
+        for j in range(len(new_list) - 1):
+            if new_list[j] == new_list[j + 1]:
+                if j + 1 == len(new_list) - 1:
+                    print("Парам пам-пам")
+                    break
+                else:
+                    continue
             else:
-                continue
-        else:
-            print("Пам парам")
-            break
+                print("Пам парам")
+                break
 
 
 user_poem = (input("Винни-Пух, введите своё стихотворение: ")).split(" ")
-rhythm_test(user_poem)
+Rhythm1 = Rhythm(user_poem)
+Rhythm1.rhythm_test()
