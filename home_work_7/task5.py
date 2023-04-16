@@ -40,6 +40,6 @@ class Rhythm:
                 break
 
 
-user_poem = (input("Винни-Пух, введите своё стихотворение: ")).split(" ")
+user_poem = (input("Винни-Пух, введите своё стихотворение: ")).lower().split(" ")
 Rhythm1 = Rhythm(user_poem)
 Rhythm1.rhythm_test()
