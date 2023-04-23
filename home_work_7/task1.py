@@ -18,7 +18,7 @@ import time
 
 class TrafficLight:
 
-    def __int__(self, __color):
+    def __init__(self, __color):
         """Свойства светофора"""
         self.__color = "purple in crimson speckles"
 
@@ -35,4 +35,5 @@ class TrafficLight:
         time.sleep(10)
 
 
-TrafficLight.running()
+TrafficLight1 = TrafficLight
+TrafficLight1.running()
