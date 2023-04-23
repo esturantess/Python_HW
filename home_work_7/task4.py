@@ -49,8 +49,8 @@ class Matrix:
 
 Matrix1 = Matrix([[1, 2], [2, 1], [6, 7]])
 Matrix2 = Matrix([[4, 3], [2, 7], [1, 9]])
-str(Matrix1)
+Matrix1.__str__()
 print()
-str(Matrix2)
+Matrix2.__str__()
 print()
-str(Matrix(Matrix1.__add__(Matrix2)))
+Matrix(Matrix1.__add__(Matrix2)).__str__()
