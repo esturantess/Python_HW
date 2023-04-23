@@ -16,14 +16,14 @@
 # Например: 20м*5000м*25кг*0.05м = 125000 кг = 125 т
 
 class Road:
+    mass = 25
+    meters_number = 0.05
 
     def __init__(self, length, width):
         """Свойства дороги"""
         self._length = length
         self._width = width
-        self.mass = 25
         self.thickness = 1
-        self.meters_number = 0.05
 
     def calculation_of_asphalt_mass(self):
         """Расчет массы асфальта"""
