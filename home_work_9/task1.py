@@ -1,8 +1,5 @@
 class NotNumber:
 
-    def __init__(self, my_attr):
-        self.my_attr = my_attr
-
     def __set__(self, instance, value):
         if type(value) != str:
             raise ValueError("Некорректные данные!")
@@ -13,8 +10,8 @@ class NotNumber:
 
 
 class Worker:
-    name = NotNumber('name')
-    surname = NotNumber('surname')
+    name = NotNumber()
+    surname = NotNumber()
 
     def __init__(self, name, surname, position, wage, bonus):
         """Информация о сотруднике"""
