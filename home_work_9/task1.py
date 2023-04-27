@@ -1,4 +1,4 @@
-class NotNumber:
+class IsStr:
 
     def __set__(self, instance, value):
         if type(value) != str:
@@ -10,8 +10,8 @@ class NotNumber:
 
 
 class Worker:
-    name = NotNumber()
-    surname = NotNumber()
+    name = IsStr()
+    surname = IsStr()
 
     def __init__(self, name, surname, position, wage, bonus):
         """Информация о сотруднике"""
