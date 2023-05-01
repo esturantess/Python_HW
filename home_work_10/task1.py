@@ -18,19 +18,25 @@
 
 
 def type_checking(user_list):
-    for i in user_list:
-        print(type(i))
+    for el in user_list:
+        print("Буквенный формат: ", f"'{el}'")
+        print("Содержание: ", el)
+        print("Тип данных: ", type(el))
+        print()
 
 
 def getting_unicode_code_points(user_list):
-    for i in user_list:
-        print(i.encode('unicode-escape').decode("UTF-8"))
+    for el in user_list:
+        print(f"Кодовые точки '{el}':", el.encode('unicode-escape').decode("UTF-8"))
 
 
-word1 = 'разработка'
-word2 = 'сокет'
-word3 = 'декоратор'
-list1 = [word1, word2, word3]
+list1 = ['разработка', 'сокет', 'декоратор']
+
+code_points = [
+    '\u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430',
+    '\u0441\u043e\u043a\u0435\u0442',
+    '\u0434\u0435\u043a\u043e\u0440\u0430\u0442\u043e\u0440']
 
 type_checking(list1)
+type_checking(code_points)
 getting_unicode_code_points(list1)
